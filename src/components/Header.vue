@@ -9,7 +9,8 @@ const router = useRouter();
 const ui = useUIStore();
 
 function onSearch() {
-  /* could set a global query or navigate to search results */
+  if (!query.value) return;
+  router.push({ name: "Search", query: { q: query.value } });
 }
 function openDrawer() {
   ui.toggleDrawer();

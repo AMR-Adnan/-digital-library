@@ -1,5 +1,5 @@
 <script setup>
-import { ref } from "vue";
+import { ref, onMounted } from "vue";
 import Header from "../components/Header.vue";
 import Sidebar from "../components/Sidebar.vue";
 import SectionCard from "../components/SectionCard.vue";
@@ -17,6 +17,10 @@ const topPicks = ref([
   { id: "p2", title: "حقوق المرأة في المجتمع", icon: "📗" },
   { id: "p3", title: "تعامل مع الطفل", icon: "🎧" },
 ]);
+const scroller = ref(null);
+onMounted(() => {
+  if (!scroller.value) return;
+});
 </script>
 
 <template>
@@ -46,14 +50,31 @@ const topPicks = ref([
 
       <div class="mb-6">
         <h3 class="text-xl font-semibold text-right mb-3">الأكثر شهرة</h3>
-        <div class="flex gap-4 overflow-x-auto pb-2">
-          <div
-            v-for="p in topPicks"
-            :key="p.id"
-            class="min-w-[220px] bg-white rounded-2xl p-4 glass card-hover"
+        <div class="relative">
+          <button
+            @click="scroller.scrollBy({ left: -240, behavior: 'smooth' })"
+            class="absolute right-0 top-1/2 -translate-y-1/2 z-10 p-2 bg-white/80 rounded-full"
           >
-            <div class="text-4xl">{{ p.icon }}</div>
-            <div class="mt-2 font-medium">{{ p.title }}</div>
+            ‹
+          </button>
+          <button
+            @click="scroller.scrollBy({ left: 240, behavior: 'smooth' })"
+            class="absolute left-0 top-1/2 -translate-y-1/2 z-10 p-2 bg-white/80 rounded-full"
+          >
+            ›
+          </button>
+          <div
+            ref="scroller"
+            class="flex gap-4 overflow-x-auto pb-2 scroll-smooth"
+          >
+            <div
+              v-for="p in topPicks"
+              :key="p.id"
+              class="min-w-[220px] bg-white rounded-2xl p-4 glass card-hover"
+            >
+              <div class="text-4xl">{{ p.icon }}</div>
+              <div class="mt-2 font-medium">{{ p.title }}</div>
+            </div>
           </div>
         </div>
       </div>
