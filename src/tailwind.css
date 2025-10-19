@@ -1,0 +1,73 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url("https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700;800&display=swap");
+
+:root {
+  --primary: #4a90e2;
+  --accent: #f48fb1;
+}
+
+html {
+  font-family: "Tajawal", ui-sans-serif, system-ui;
+}
+
+/* hero gradient and subtle background */
+.app-bg {
+  background: linear-gradient(
+    180deg,
+    rgba(74, 144, 226, 0.08),
+    rgba(244, 143, 177, 0.03)
+  );
+}
+
+.hero {
+  background: linear-gradient(
+    90deg,
+    rgba(74, 144, 226, 0.12),
+    rgba(244, 143, 177, 0.06)
+  );
+}
+
+/* glass morphism card */
+.glass {
+  background: rgba(255, 255, 255, 0.06);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+/* dark mode tweaks */
+.dark .glass {
+  background: rgba(15, 23, 36, 0.55);
+  border-color: rgba(255, 255, 255, 0.04);
+}
+.dark body {
+  background-color: #071129;
+}
+
+/* buttons */
+.btn-primary {
+  @apply bg-primary text-white px-4 py-2 rounded-xl shadow-md hover:scale-105 transform transition;
+}
+.btn-ghost {
+  @apply bg-white/10 text-white px-3 py-2 rounded-full hover:bg-white/20 transition;
+}
+
+/* utility for card hover */
+.card-hover {
+  @apply transition transform hover:scale-105 hover:shadow-xl;
+}
+
+/* animations when entering */
+.page-enter {
+  opacity: 0;
+  transform: translateY(10px);
+}
+.page-enter-active {
+  transition: all 300ms ease;
+}
+.page-enter-to {
+  opacity: 1;
+  transform: translateY(0);
+}
