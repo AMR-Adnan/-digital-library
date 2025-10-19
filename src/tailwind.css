@@ -5,8 +5,10 @@
 @import url("https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700;800&display=swap");
 
 :root {
-  --primary: #4a90e2;
-  --accent: #f48fb1;
+  --primary: #6b21a8; /* purple */
+  --accent: #c084fc;
+  --muted: #f3f4f6;
+  --text: #1f2937;
 }
 
 html {
@@ -25,38 +27,44 @@ html {
 .hero {
   background: linear-gradient(
     90deg,
-    rgba(74, 144, 226, 0.12),
-    rgba(244, 143, 177, 0.06)
+    rgba(107, 33, 168, 0.08),
+    rgba(192, 132, 252, 0.03)
   );
 }
 
 /* glass morphism card */
 .glass {
-  background: rgba(255, 255, 255, 0.06);
-  backdrop-filter: blur(8px);
-  border: 1px solid rgba(255, 255, 255, 0.06);
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(6px);
+  border: 1px solid rgba(99, 102, 241, 0.06);
 }
 
 /* dark mode tweaks */
 .dark .glass {
-  background: rgba(15, 23, 36, 0.55);
-  border-color: rgba(255, 255, 255, 0.04);
+  background: rgba(17, 24, 39, 0.65);
+  border-color: rgba(255, 255, 255, 0.02);
 }
 .dark body {
-  background-color: #071129;
+  background-color: #0b1220;
 }
 
 /* buttons */
-.btn-primary {
-  @apply bg-primary text-white px-4 py-2 rounded-xl shadow-md hover:scale-105 transform transition;
+.btn-flat {
+  @apply bg-transparent text-primary px-3 py-2 rounded-md border border-transparent hover:bg-muted/60 transition;
 }
-.btn-ghost {
-  @apply bg-white/10 text-white px-3 py-2 rounded-full hover:bg-white/20 transition;
+.btn-primary {
+  @apply bg-primary text-white px-4 py-2 rounded-xl shadow-sm hover:shadow-md transition;
 }
 
 /* utility for card hover */
 .card-hover {
   @apply transition transform hover:scale-105 hover:shadow-xl;
+}
+
+/* centered search style for larger screens */
+.search-centered {
+  max-width: 760px;
+  margin: 0 auto;
 }
 
 /* animations when entering */

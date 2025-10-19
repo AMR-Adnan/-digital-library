@@ -4,10 +4,17 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        primary: "#4A90E2",
-        accent: "#F48FB1",
-        darkbg: "#0f1724",
-        slateglass: "rgba(255,255,255,0.06)",
+        primary: {
+          DEFAULT: "#6B21A8",
+          50: "#F6F0FB",
+          100: "#EFE5F7",
+          200: "#E4CCF1",
+        },
+        accent: "#C084FC",
+        surface: "#FFFFFF",
+        muted: "#F3F4F6",
+        text: "#1F2937",
+        "glass-hex": "rgba(255,255,255,0.7)",
       },
       borderRadius: {
         "2xl": "1rem",

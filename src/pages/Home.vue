@@ -76,6 +76,36 @@ onMounted(() => {
               <div class="mt-2 font-medium">{{ p.title }}</div>
             </div>
           </div>
+
+          <div class="mb-6">
+            <h3 class="text-xl font-semibold text-right mb-3">التصنيفات</h3>
+            <div class="grid grid-cols-2 sm:grid-cols-4 gap-4">
+              <button
+                class="flex flex-col items-center p-4 bg-white rounded-lg shadow-sm hover:shadow-md transition"
+              >
+                <div class="text-2xl text-primary">📚</div>
+                <div class="mt-2 text-sm">كتب</div>
+              </button>
+              <button
+                class="flex flex-col items-center p-4 bg-white rounded-lg shadow-sm hover:shadow-md transition"
+              >
+                <div class="text-2xl text-primary">🔬</div>
+                <div class="mt-2 text-sm">أبحاث</div>
+              </button>
+              <button
+                class="flex flex-col items-center p-4 bg-white rounded-lg shadow-sm hover:shadow-md transition"
+              >
+                <div class="text-2xl text-primary">📰</div>
+                <div class="mt-2 text-sm">مقالات</div>
+              </button>
+              <button
+                class="flex flex-col items-center p-4 bg-white rounded-lg shadow-sm hover:shadow-md transition"
+              >
+                <div class="text-2xl text-primary">🎥</div>
+                <div class="mt-2 text-sm">فيديوهات</div>
+              </button>
+            </div>
+          </div>
         </div>
       </div>
 

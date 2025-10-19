@@ -57,20 +57,20 @@ function toggleDark() {
       </div>
 
       <div class="flex-1">
-        <div class="relative">
+        <div class="relative search-centered">
           <input
             v-model="query"
             @keyup.enter="onSearch"
             placeholder="ابحث عن كتاب، مقال، أو كتيب..."
-            class="w-full rounded-full shadow-lg px-5 py-3 border border-transparent focus:outline-none focus:ring-2 focus:ring-primary/30 bg-white/90"
+            class="w-full rounded-full shadow-sm px-6 py-3 border border-transparent focus:outline-none focus:ring-2 focus:ring-primary/30 bg-white"
           />
           <button
             @click="onSearch"
-            class="absolute left-2 top-1/2 -translate-y-1/2 p-2 rounded-full bg-primary text-white"
+            class="absolute left-3 top-1/2 -translate-y-1/2 p-2 rounded-full bg-primary text-white"
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
-              class="h-4 w-4"
+              class="h-4 w-4 text-white"
               viewBox="0 0 20 20"
               fill="currentColor"
             >
